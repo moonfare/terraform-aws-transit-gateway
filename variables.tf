@@ -27,7 +27,6 @@ variable "tgw_association_default_route_table_id" {
   default     = "tgw-rtb-0e2771324a8b5ccbc"
 }
 
-
 variable "tgw_peering_attachments" {
   description = "A map of transit gateway peering attachments"
   type = map(object({
@@ -134,6 +133,12 @@ variable "tgw_default_route_table_tags" {
   description = "Additional tags for the Default TGW route table"
   type        = map(string)
   default     = {}
+}
+
+variable "accepter_region" {
+  description = "The region of the accepter VPC of the TGW Peering"
+  type        = string
+  default     = "eu-central-1"
 }
 
 ################################################################################
